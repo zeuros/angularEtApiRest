@@ -1,0 +1,24 @@
+nelmio_api_doc:
+    models: { use_jms: false }
+    areas:
+        path_patterns: # an array of regexps
+            - ^/api(?!/doc$)
+        host_patterns:
+            - ^
+    documentation:
+        schemes: [https]
+        info:
+            title: Mon appli
+            description: C'est la folie !
+            version: 10000.0.0
+        securityDefinitions:
+            password:
+                type: oauth2
+                description: provides a password flow access_token
+                flow: password
+                tokenUrl: /oauth/v2/token
+                name: thepass
+        security:
+            - password: []
+              name: 'tototo'
+            - client_credentials: []
