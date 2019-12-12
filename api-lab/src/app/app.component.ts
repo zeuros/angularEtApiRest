@@ -15,11 +15,11 @@ export class AppComponent {
     constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
     hasAuthToken() {
-        return localStorage.getItem('access_token') !== null;
+        return this.authenticationService.isLoggedIn();
     }
 
     logout() {
-        localStorage.removeItem('access_token');
+        localStorage.removeItem('token');
         this.router.navigate(['home']);
     }
 }

@@ -19,7 +19,7 @@ export class AuthenticationService {
     }
 
     authenticate(user: any) {
-        let send = {
+        let data = {
             client_id:     this.clientID,
             client_secret: this.clientSecret,
             grant_type:    'password',
@@ -31,12 +31,12 @@ export class AuthenticationService {
             'Content-Type': 'application/json',
         })});
 
-        return this.http.post(this.urlLogin, send, options);
+        return this.http.post(this.urlLogin, data, options);
     }
 
-    loggedIn() {
+    isLoggedIn() {
         let now = Math.floor(+new Date() / 1000);
-        return now < ( localStorage.getItem('expires_at') || 0 );
+        return localStorage.getItem('token') && ( now < ( localStorage.getItem('expires_at') || 0 ) );
     }
 
     logout() {

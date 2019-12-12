@@ -1,1 +1,12 @@
-<p>movies works!</p>
+<h1>Movies</h1>
+<div [hidden]="!error" class="alert alert-danger" role="alert">
+  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  	<span class="sr-only">Error:</span>
+  	
+</div>
+<ul>
+	<li *ngFor="let movie of movies">
+		<a data-id="{{ movie.id }}" href="">{{ movie.name }}</a>
+		<p>description: {{ movie.description }}</p>
+	</li>
+</ul>

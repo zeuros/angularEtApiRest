@@ -26,7 +26,7 @@ class MovieController extends FOSRestController
     *
     * This thing is not really a comment but something alike
     * 
-    * @Rest\Post("/movies")
+    * @Rest\Get("/movies")
     * @SWG\Response(
     *     response=200,
     *     description="",
