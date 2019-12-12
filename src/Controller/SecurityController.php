@@ -45,6 +45,10 @@ class SecurityController extends FOSRestController
 
   /**
    * Create Client.
+   *
+   * Crée un nouveau client pour l'app (android, dev, angular ...)
+   * Décommenter le code pour pouvoir en générer un nouveau
+   * 
    * @FOSRest\Post("/createClient")
    *
    * @return Response
